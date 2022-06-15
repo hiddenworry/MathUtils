@@ -22,17 +22,31 @@ public class MathUtil {
     // giai thừa hồ đồ thị dốc đứng, tăng nhanh giá trị
     // 20 giai thừa vừa kịp con số kiểu long
     // bài này quy ước từ 0 -20
+//    public static long getFactorial(int n){
+//        if (n < 0 || n> 20) throw  new IllegalArgumentException("Invalid agrument n must be bettwen 0..20");
+//        
+//        if (n==0 || n==1){
+//            return 1;      
+//        }
+//        long product = 1;
+//        for (int i = 2; i <= n; i++) 
+//           product*=i;
+//        return product;
+//            
+//        
+//    
+//    }
+    // học về đệ quy 30s
+    // Hiện tượng gọi lại chính mình vìới 1 quy mô khác
+    // Ví dụ: con búp bê Nga
+    
     public static long getFactorial(int n){
         if (n < 0 || n> 20) throw  new IllegalArgumentException("Invalid agrument n must be bettwen 0..20");
         
         if (n==0 || n==1){
             return 1;      
         }
-        long product = 1;
-        for (int i = 2; i <= n; i++) 
-           product*=i;
-        return product;
-            
+        return n * getFactorial(n-1);
         
     
     }
